@@ -13,7 +13,12 @@ all contributors are expected to adhere to.
 ## Project structure
 
 ```
-node-red-node-typescript-starter/
+node-red/                            * root of the project
+ ├──docker/                          * docker-based node-red playground
+ │   ├──node-red/                    * folder for the node-red service
+ │   │   └──data/                    * files of the node-red playground project
+ |   └──docker-compose.yml           * schema of the dockerized playground environment
+ |
  ├──src/                             * source files of the node set, where subfolder names = node types
  │   ├──shared/                      * folder for .ts files shared across multiple nodes in the node set
  │   │
@@ -119,6 +124,19 @@ Please keep in mind that this project is not well covered with tests. For now, a
 
 This project comes pre-configured for [VSCode](https://code.visualstudio.com/). We assume yuo have instlled all recommended plugins.
 
-## Running and debugging a local development environment
+## Running and debugging a local playground using docker
 
-[Read Node-RED docs](https://nodered.org/docs/creating-nodes/first-node#testing-your-node-in-node-red) on how to install the node set into your Node-RED runtime.
+We keep an example flow for experimentation in `./docker/node-red/data`. To update it with your local build, Follow these steps:
+
+```sh
+# build library
+npm run build
+# pack library into ./starwards-node-red-<version>.tgz
+npm pack
+# install packed library into ./docker/node-red/data
+npm -prefix ./docker/node-red/data install --no-save ./starwards-node-red-*.tgz
+# fire up the Node-RED docker
+docker compose -f ./docker/docker-compose.yml up
+```
+
+Alternatively, you can [Follow Node-RED docs](https://nodered.org/docs/creating-nodes/first-node#testing-your-node-in-node-red) on how to install the node set into your local Node-RED runtime.
