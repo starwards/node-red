@@ -3,23 +3,23 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18]
+        strategy:
+            matrix:
+                node-version: [18]
 
-    steps:
-      - uses: actions/checkout@v2.3.4
-      - name: Setup Node.js ${{ matrix.node-version }} environment
-        uses: actions/setup-node@v2.1.2
-        with:
-          node-version: ${{ matrix.node-version }}
+        steps:
+            - uses: actions/checkout@v2.3.4
+            - name: Setup Node.js ${{ matrix.node-version }} environment
+              uses: actions/setup-node@v2.1.2
+              with:
+                  node-version: ${{ matrix.node-version }}
 
-      - name: install, lint, build and test
-        run: |
-          npm ci
-          npm run lint
-          npm run build
-          npm test
+            - name: install, lint, build and test
+              run: |
+                  npm ci
+                  npm run lint
+                  npm run build
+                  npm test

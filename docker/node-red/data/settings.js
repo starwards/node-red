@@ -192,7 +192,6 @@ module.exports = {
     //    next();
     //},
 
-
     // The following property can be used to add a custom middleware function
     // in front of all admin http routes. For example, to set custom http
     // headers
@@ -248,7 +247,6 @@ module.exports = {
     // their values. Setting this to true will cause the keys to be listed.
     exportGlobalContextKeys: false,
 
-
     // Context Storage
     // The following property can be used to enable context storage. The configuration
     // provided here will enable file-based context that flushes to disk every 30 seconds.
@@ -278,19 +276,19 @@ module.exports = {
             // debug - record information which is more verbose than info + info + warn + error + fatal errors
             // trace - record very detailed logging + debug + info + warn + error + fatal errors
             // off - turn off all logging (doesn't affect metrics or audit)
-            level: "info",
+            level: 'info',
             // Whether or not to include metric events in the log output
             metrics: false,
             // Whether or not to include audit events in the log output
-            audit: false
-        }
+            audit: false,
+        },
     },
 
     // Customising the editor
     editorTheme: {
         projects: {
             // To enable the Projects feature, set this value to true
-            enabled: false
-        }
-    }
-}
+            enabled: false,
+        },
+    },
+};

@@ -55,7 +55,7 @@ Then, `git clone` this repository locally and make sure you can run the followin
 ```sh
 # install all project dependencies
 npm ci
-# test formatting (eslint)
+# test formatting (eslint and prettier)
 npm run lint
 # create a production build
 npm run build
@@ -66,7 +66,7 @@ npm run test
 more commands:
 
 ```sh
-# fix lint issues
+# fix eslint and prettier issues
 npm run lint:fix
 # run test in watch mode
 npm run test:watch
@@ -94,11 +94,11 @@ consider opening [an issue in the main project][feature-issue] and describing yo
 
 Please provide the following information:
 
-- Use a **clear and descriptive title** for the issue to identify the
-  suggestion.
-- Provide a **description of the suggested enhancement** in as many details as
-  necessary.
-- When providing code samples, please use [code blocks][code-blocks].
+-   Use a **clear and descriptive title** for the issue to identify the
+    suggestion.
+-   Provide a **description of the suggested enhancement** in as many details as
+    necessary.
+-   When providing code samples, please use [code blocks][code-blocks].
 
 [code-blocks]: https://help.github.com/articles/creating-and-highlighting-code-blocks/
 
@@ -106,17 +106,17 @@ Please provide the following information:
 
 Please provide the following information:
 
-- If this is not a trivial fix, consider **creating an issue to discuss first**
-  and **later link to it from the PR**.
-- Use a **clear and descriptive title** for the pull request.
-  - Follow [Conventional Commit specification](https://www.conventionalcommits.org/en/v1.0.0/) where sufficiently large or impactful change is made.
-- Provide a **description of the changes** in as many details as necessary.
+-   If this is not a trivial fix, consider **creating an issue to discuss first**
+    and **later link to it from the PR**.
+-   Use a **clear and descriptive title** for the pull request.
+    -   Follow [Conventional Commit specification](https://www.conventionalcommits.org/en/v1.0.0/) where sufficiently large or impactful change is made.
+-   Provide a **description of the changes** in as many details as necessary.
 
 Before submitting your pull request, also make sure that the following
 conditions are met:
 
-- Your new code **adheres to the code style** through running `npm run lint`.
-- Your new code **passes all existing and new tests** through running `npm run test`.
+-   Your new code **adheres to the code style** through running `npm run lint`.
+-   Your new code **passes all existing and new tests** through running `npm run test`.
 
 Please keep in mind that this project is not well covered with tests. For now, a lot of the testing is done manually. Please make sure you are familiar with the areas that are affected by changes you make in the code.
 
