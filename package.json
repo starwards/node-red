@@ -1,6 +1,6 @@
 {
   "name": "@starwards/node-red",
-  "version": "0.2.3",
+  "version": "0.0.1",
   "description": "Starwards server integration",
   "scripts": {
     "add-node": "node ./utils/add-node.js",
@@ -62,7 +62,7 @@
       "^.+\\.ts$": "ts-jest"
     },
     "testMatch": [
-      "**/__tests__/**/*.test.ts"
+      "**/*.test.ts"
     ]
   }
 }
