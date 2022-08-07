@@ -1,7 +1,7 @@
 {
   "name": "@starwards/node-red",
   "version": "0.0.1",
-  "description": "Starwards server integration",
+  "description": "Starwards nodes for Node-RED",
   "scripts": {
     "add-node": "node ./utils/add-node.js",
     "copy": "copyfiles -u 2 \"./src/**/*.{png,svg}\" \"./dist/\"",

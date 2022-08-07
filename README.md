@@ -1,109 +1,52 @@
-# Node-RED Node TypeScript Starter
+<h1 align="center">
+  <br>
+  <img src="static/images/starwards-logo.webp" alt="logo" width="200">
+  <br>
+  @starwards/node-red 
+  <br>
+  <br>
+</h1>
 
-This is a quick-start template repository for creating new Node-RED node sets in TypeScript.
+# What is this?
 
-## Project Structure
+Starwards nodes for Node-RED.
 
-```
-node-red-node-typescript-starter/
- ├──src/                             * source files of the node set, where subfolder names = node types
- │   ├──shared/                      * folder for .ts files shared across multiple nodes in the node set
- │   │
- │   └──transform-text/              * source files of the transform-text node
- │       ├──icons/                   * custom icons used by the node set in the editor
- │       │
- │       ├──modules/                 * .ts modules for the runtime side (transform-text.js file) of the node
- │       │
- │       ├──shared/                  * folder for .ts files shared between the runtime side (.js file) and the editor side (.html file) of the node
- │       │
- │       ├──transform-text.html/     * files for compiling and bundling into the editor side (transform-text.html file) of the node
- │       │   ├──modules/             * .ts modules
- │       │   ├──editor.html          * html template for the edit dialog
- │       │   ├──help.html            * html template for the help in the info tab
- │       │   └──index.ts             * entry file
- │       │
- |       ├──transform-text.ts        * entry file for the runtime side (transform-text.js file) of the node
- |       └──transform-text.test.ts   * tests for the transform-text node
- |
- ├──package.json                     * dependencies and node types for the Node-RED runtime to load
- |
- ├──rollup.config.editor.json        * rollup config for building the editor side of the nodes
- |
- ├──tsconfig.json                    * base typescript config, for the code editor
- ├──tsconfig.runtime.json            * config for creating a production build of the runtime side of the nodes
- └──tsconfig.runtime.watch.json      * config for watching and incremental building the runtime side of the nodes
-```
+[Node-RED](https://nodered.org/) is a programming tool for wiring together hardware devices, APIs and online services in new and interesting ways.
 
-## Getting Started
+[Starwards](https://github.com/starwards/starwards) is a space and starship simulator designed specifically for LARPs (Live Action Role-Playing games).
 
-1. Generate a new GitHub repository by clicking the `Use this template` button at the top of the repository homepage, then clone your new repo. Or you might just clone this repo: `git clone https://github.com/alexk111/node-red-node-typescript-starter.git` and cd into it: `cd node-red-node-typescript-starter`.
-2. Install dependencies: `npm install`.
+This package adds Starwards server API to the Node-RED echosystem. This is the way to integrate starwards with anything that is supported by Node-RED: Dashboards, MQTT, DMX etc.
 
-## Adding Nodes
+# how to run and use it
 
-You can quickly scaffold a new node and add it to the node set. Use the following command to create `my-new-node-type` node:
+Only Nove-RED version 1 and above is supported.
+
+Use the following command from within your user data directory (by default, `$HOME/.node-red`):
 
 ```
-npm run add-node my-new-node-type
+npm install @starwards/node-red
 ```
 
-The node generator is based on mustache templates. At the moment there are three templates available:
+For more options, see [Adding nodes to the palette](https://nodered.org/docs/user-guide/runtime/adding-nodes)
 
-- `blank` (used by default) - basic node for Node-RED >=1.0
-- `blank-0` - node with a backward compatibility for running on Node-RED <1.0
-- `config` - configuration node
+### The node is added, now what?
 
-To generate a node using a template, specify it as the third argument:
+Missing documentation. contributions are welcomed!
 
-```
-npm run add-node my-new-node-type blank
-```
+# how do I get involved
 
-or
+See ["how do I get involved"](https://github.com/starwards/starwards/blob/master/README.md#how-do-i-get-involved) In the main project.
 
-```
-npm run add-node my-new-node-config config
-```
+## How do I contribute?
 
-### Adding Node Templates
-
-If you want to make your own template available, add it to `./utils/templates/`.
-
-## Developing Nodes
-
-Build & Test in Watch mode:
-
-```
-npm run dev
-```
-
-## Building Node Set
-
-Create a production build:
-
-```
-npm run build
-```
-
-## Backers 💝
-
-[[Become a backer](https://mynode.alexkaul.com/gh-donate)]
-
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/0/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/0/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/1/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/1/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/2/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/2/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/3/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/3/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/4/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/4/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/5/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/5/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/6/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/6/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/7/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/7/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/8/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/8/profile)
-[![Backer](https://mynode.alexkaul.com/gh-backer/top/9/avatar/60)](https://mynode.alexkaul.com/gh-backer/top/9/profile)
-
-## Testing Node Set in Node-RED
-
-[Read Node-RED docs](https://nodered.org/docs/creating-nodes/first-node#testing-your-node-in-node-red) on how to install the node set into your Node-RED runtime.
+Please read [Contributing to @starwards/node-red](CONTRIBUTING.md) for more details.
 
 ## License
 
-MIT © Alex Kaul
+This project is Based on the MIT-Licensed https://github.com/alexk111/node-red-node-typescript-starter template, Copyrighted to (c) 2020 Alex Kaul
+
+`SPDX-License-Identifier: AGPL-3.0-or-later`
+
+For more details on license and copyright see [the license file](LICENSE.md)
+
+The current license was chosen because we feel it best represents the ethics of knowledge sharing in the LARP communit

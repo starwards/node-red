@@ -1,6 +1,6 @@
 Starwards node-red nodes : Integrate Starwards server with other systems and devices
 
-Based on the https://github.com/alexk111/node-red-node-typescript-starter template, Copyrighted to (c) 2020 Alex Kaul
+This project is Based on the MIT-Licensed https://github.com/alexk111/node-red-node-typescript-starter template, Copyrighted to (c) 2020 Alex Kaul
 
 This collective work is Copyright (C) 2022 by Amir Arad <greenshade@gmail.com>.
 Individual portions may be copyright by individual contributors, and are included in this collective work with permission of the copyright owners.
