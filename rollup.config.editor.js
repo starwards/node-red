@@ -1,9 +1,8 @@
 import fs from "fs";
 import glob from "glob";
+import packageJson from "./package.json";
 import path from "path";
 import typescript from "@rollup/plugin-typescript";
-
-import packageJson from "./package.json";
 
 const allNodeTypes = Object.keys(packageJson["node-red"].nodes);
 
@@ -46,9 +45,9 @@ const makePlugins = (nodeType) => [
   typescript({
     lib: ["es5", "es6", "dom"],
     include: [
-      `src/nodes/${nodeType}/${nodeType}.html/**/*.ts`,
-      `src/nodes/${nodeType}/shared/**/*.ts`,
-      "src/nodes/shared/**/*.ts",
+      `src/${nodeType}/${nodeType}.html/**/*.ts`,
+      `src/${nodeType}/shared/**/*.ts`,
+      "src/shared/**/*.ts",
     ],
     target: "es5",
     tsconfig: false,
@@ -58,9 +57,9 @@ const makePlugins = (nodeType) => [
 ];
 
 const makeConfigItem = (nodeType) => ({
-  input: `src/nodes/${nodeType}/${nodeType}.html/index.ts`,
+  input: `src/${nodeType}/${nodeType}.html/index.ts`,
   output: {
-    file: `dist/nodes/${nodeType}/${nodeType}.html`,
+    file: `dist/${nodeType}/${nodeType}.html`,
     format: "iife",
   },
   plugins: makePlugins(nodeType),

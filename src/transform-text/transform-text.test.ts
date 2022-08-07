@@ -1,7 +1,8 @@
 import testHelper, { TestFlowsItem } from "node-red-node-test-helper";
-import transformTextNode from "../nodes/transform-text/transform-text";
-import { TransformTextNodeDef } from "../nodes/transform-text/modules/types";
-import { TransformTextOperation } from "../nodes/transform-text/shared/types";
+
+import { TransformTextNodeDef } from "./modules/types";
+import { TransformTextOperation } from "./shared/types";
+import transformTextNode from "./transform-text";
 
 type FlowsItem = TestFlowsItem<TransformTextNodeDef>;
 type Flows = Array<FlowsItem>;

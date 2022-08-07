@@ -6,27 +6,24 @@ This is a quick-start template repository for creating new Node-RED node sets in
 
 ```
 node-red-node-typescript-starter/
- ├──src/                             * source files of the node set
- │   ├──__tests__/                   * tests for the node set (test file names should match *.test.ts glob pattern)
- │   │   └──transform-text.test.ts   * tests for the transform-text node
+ ├──src/                             * source files of the node set, where subfolder names = node types
+ │   ├──shared/                      * folder for .ts files shared across multiple nodes in the node set
  │   │
- │   └──nodes/                       * node set folder, where subfolder names = node types
- │       ├──shared/                  * folder for .ts files shared across multiple nodes in the node set
+ │   └──transform-text/              * source files of the transform-text node
+ │       ├──icons/                   * custom icons used by the node set in the editor
  │       │
- │       └──transform-text/          * source files of the transform-text node
- │           ├──icons/               * custom icons used by the node set in the editor
- │           │
- │           ├──modules/             * .ts modules for the runtime side (transform-text.js file) of the node
- │           │
- │           ├──shared/              * folder for .ts files shared between the runtime side (.js file) and the editor side (.html file) of the node
- │           │
- │           ├──transform-text.html/ * files for compiling and bundling into the editor side (transform-text.html file) of the node
- │           │   ├──modules/         * .ts modules
- │           │   ├──editor.html      * html template for the edit dialog
- │           │   ├──help.html        * html template for the help in the info tab
- │           │   └──index.ts         * entry file
- │           │
- |           └──transform-text.ts    * entry file for the runtime side (transform-text.js file) of the node
+ │       ├──modules/                 * .ts modules for the runtime side (transform-text.js file) of the node
+ │       │
+ │       ├──shared/                  * folder for .ts files shared between the runtime side (.js file) and the editor side (.html file) of the node
+ │       │
+ │       ├──transform-text.html/     * files for compiling and bundling into the editor side (transform-text.html file) of the node
+ │       │   ├──modules/             * .ts modules
+ │       │   ├──editor.html          * html template for the edit dialog
+ │       │   ├──help.html            * html template for the help in the info tab
+ │       │   └──index.ts             * entry file
+ │       │
+ |       ├──transform-text.ts        * entry file for the runtime side (transform-text.js file) of the node
+ |       └──transform-text.test.ts   * tests for the transform-text node
  |
  ├──package.json                     * dependencies and node types for the Node-RED runtime to load
  |

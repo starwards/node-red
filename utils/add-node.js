@@ -89,7 +89,7 @@ async function addNodeToPackageJson() {
   const pkgJsonData = JSON.parse(await readFile(pkgJsonPath, "utf8"));
   pkgJsonData["node-red"].nodes[
     nodeTypeInKebabCase
-  ] = `./dist/nodes/${nodeTypeInKebabCase}/${nodeTypeInKebabCase}.js`;
+  ] = `./dist/${nodeTypeInKebabCase}/${nodeTypeInKebabCase}.js`;
   await writeFile(pkgJsonPath, JSON.stringify(pkgJsonData, null, 2), "utf8");
   console.log(green(`Added ${bold(nodeTypeInKebabCase)} to package.json`));
 }
@@ -97,13 +97,7 @@ async function addNodeToPackageJson() {
 async function main() {
   // paths
   const templateDir = path.join(__dirname, "templates", nodeTemplate);
-  const newNodeDir = path.join(
-    __dirname,
-    "..",
-    "src",
-    "nodes",
-    nodeTypeInKebabCase
-  );
+  const newNodeDir = path.join(__dirname, "..", "src", nodeTypeInKebabCase);
 
   // check if paths ok
   if (!fs.existsSync(templateDir)) {
