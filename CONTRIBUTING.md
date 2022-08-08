@@ -2,8 +2,7 @@
 
 Thanks for considering contributing to Starwards!
 
-**First**: if you're unsure of anything, feel free to ask on our [Discord
-server][discord-invite-link]. We're a friendly and welcoming bunch!
+**First**: if you're unsure of anything, feel free to ask on our [Discord server][discord-invite-link]. We're a friendly and welcoming bunch!
 
 ## Code of Conduct
 
@@ -140,3 +139,7 @@ docker compose -f ./docker/docker-compose.yml up
 ```
 
 Alternatively, you can [Follow Node-RED docs](https://nodered.org/docs/creating-nodes/first-node#testing-your-node-in-node-red) on how to install the node set into your local Node-RED runtime.
+
+[discord-invite-link]: https://discord.gg/p56nSVEjdb
+[good-first-issue]: https://github.com/starwards/node-red/labels/good%20first%20issue
+[feature-issue]: https://github.com/starwards/node-red/issues/new?assignees=&labels=enhancement%20system
