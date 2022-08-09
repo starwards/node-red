@@ -422,16 +422,16 @@
         "local": true,
         "user": false,
         "nodes": {
-            "transform-text": {
-                "name": "transform-text",
+            "ship-in": {
+                "name": "ship-in",
                 "types": [
-                    "transform-text"
+                    "ship-in"
                 ],
                 "enabled": true,
                 "local": true,
                 "user": false,
                 "module": "@starwards/node-red",
-                "file": "/data/node_modules/@starwards/node-red/dist/transform-text/transform-text.js"
+                "file": "/data/node_modules/@starwards/node-red/dist/ship-in/ship-in.js"
             }
         }
     }

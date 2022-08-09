@@ -262,7 +262,7 @@ module.exports = {
     // palette. If a node's category is not in the list, the category will get
     // added to the end of the palette.
     // If not set, the following default order is used:
-    //paletteCategories: ['subflows', 'common', 'function', 'network', 'sequence', 'parser', 'storage'],
+    paletteCategories: ['Starwards'],
 
     // Configure the logging output
     logging: {
