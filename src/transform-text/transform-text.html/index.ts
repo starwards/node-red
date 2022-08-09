@@ -1,8 +1,9 @@
-import { EditorRED } from 'node-red';
-import { TransformTextEditorNodeProperties } from './modules/types';
-import { TransformTextOperation } from '../shared/types';
+import { EditorNodeProperties, EditorRED } from 'node-red';
+import { TransformTextOperation, TransformTextOptions } from '../shared/types';
 
 declare const RED: EditorRED;
+
+export interface TransformTextEditorNodeProperties extends EditorNodeProperties, TransformTextOptions {}
 
 RED.nodes.registerType<TransformTextEditorNodeProperties>('transform-text', {
     category: 'function',

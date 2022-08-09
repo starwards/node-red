@@ -1,15 +1,16 @@
-import { NodeInitializer } from "node-red";
+import { Node, NodeDef, NodeInitializer } from 'node-red';
 import { <%NodeTypePascalCase%>Node, <%NodeTypePascalCase%>NodeDef } from "./modules/types";
+import { <%NodeTypePascalCase%>Options } from "./shared/types";
+
+export interface <%NodeTypePascalCase%>NodeDef extends NodeDef, <%NodeTypePascalCase%>Options {}
+export type <%NodeTypePascalCase%>Node = Node;
 
 const nodeInit: NodeInitializer = (RED): void => {
-  function <%NodeTypePascalCase%>NodeConstructor(
-    this: <%NodeTypePascalCase%>Node,
-    config: <%NodeTypePascalCase%>NodeDef
-  ): void {
+  function <%NodeTypePascalCase%>NodeConstructor(this: <%NodeTypePascalCase%>Node, config: <%NodeTypePascalCase%>NodeDef): void {
     RED.nodes.createNode(this, config);
   }
 
   RED.nodes.registerType("<%NodeTypeKebabCase%>", <%NodeTypePascalCase%>NodeConstructor);
 };
 
-export = nodeInit;
+export default nodeInit;

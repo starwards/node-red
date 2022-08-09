@@ -29,7 +29,8 @@
         "preserveConstEnums": true,
         "forceConsistentCasingInFileNames": true,
 
-        "typeRoots": ["./src/types", "./node_modules/@types"]
+        "typeRoots": [
+            "./custom-typings", "./node_modules/@types"]
     },
     "include": ["src"],
     "exclude": ["node_modules"]

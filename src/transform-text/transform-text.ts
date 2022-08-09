@@ -1,7 +1,8 @@
-import { TransformTextNode, TransformTextNodeDef } from './modules/types';
+import { Node, NodeDef, NodeInitializer } from 'node-red';
+import { TransformTextOperation, TransformTextOptions } from './shared/types';
 
-import { NodeInitializer } from 'node-red';
-import { TransformTextOperation } from './shared/types';
+export interface TransformTextNodeDef extends NodeDef, TransformTextOptions {}
+export type TransformTextNode = Node;
 
 const nodeInit: NodeInitializer = (RED): void => {
     function TransformTextNodeConstructor(this: TransformTextNode, config: TransformTextNodeDef): void {
@@ -34,4 +35,4 @@ const nodeInit: NodeInitializer = (RED): void => {
     RED.nodes.registerType('transform-text', TransformTextNodeConstructor);
 };
 
-export = nodeInit;
+export default nodeInit;
