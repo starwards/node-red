@@ -432,6 +432,17 @@
                 "user": false,
                 "module": "@starwards/node-red",
                 "file": "/data/node_modules/@starwards/node-red/dist/ship-in/ship-in.js"
+            },
+            "starwards-config": {
+                "name": "starwards-config",
+                "types": [
+                    "starwards-config"
+                ],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@starwards/node-red",
+                "file": "/data/node_modules/@starwards/node-red/dist/starwards-config/starwards-config.js"
             }
         }
     }

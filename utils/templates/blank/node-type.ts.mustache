@@ -1,14 +1,11 @@
 import { Node, NodeDef, NodeInitializer } from 'node-red';
-import { <%NodeTypePascalCase%>Options } from "./shared/types";
 
-export interface <%NodeTypePascalCase%>NodeDef extends NodeDef, <%NodeTypePascalCase%>Options {}
-export type <%NodeTypePascalCase%>Node = Node;
+export interface <%NodeTypePascalCase%>Options {
+  // node options
+}
 
 const nodeInit: NodeInitializer = (RED): void => {
-  function <%NodeTypePascalCase%>NodeConstructor(
-    this: <%NodeTypePascalCase%>Node,
-    config: <%NodeTypePascalCase%>NodeDef
-  ): void {
+  function <%NodeTypePascalCase%>NodeConstructor(this: Node, config: NodeDef & <%NodeTypePascalCase%>Options): void {
     RED.nodes.createNode(this, config);
 
     this.on("input", (msg, send, done) => {

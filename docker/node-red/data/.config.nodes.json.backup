@@ -422,38 +422,23 @@
         "local": true,
         "user": false,
         "nodes": {
-            "transform-text": {
-                "name": "transform-text",
-                "types": [
-                    "transform-text"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@starwards/node-red",
-                "file": "/data/node_modules/@starwards/node-red/dist/transform-text/transform-text.js"
-            },
-            "starwards-in": {
-                "name": "starwards-in",
-                "types": [
-                    "starwards-in"
-                ],
-                "enabled": true,
-                "local": true,
-                "user": false,
-                "module": "@starwards/node-red",
-                "file": "/data/node_modules/@starwards/node-red/dist/starwards-in/starwards-in.js"
-            },
             "ship-in": {
                 "name": "ship-in",
-                "types": [
-                    "ship-in"
-                ],
+                "types": [],
                 "enabled": true,
                 "local": true,
                 "user": false,
                 "module": "@starwards/node-red",
                 "file": "/data/node_modules/@starwards/node-red/dist/ship-in/ship-in.js"
+            },
+            "starwards-config": {
+                "name": "starwards-config",
+                "types": [],
+                "enabled": true,
+                "local": true,
+                "user": false,
+                "module": "@starwards/node-red",
+                "file": "/data/node_modules/@starwards/node-red/dist/starwards-config/starwards-config.js"
             }
         }
     }

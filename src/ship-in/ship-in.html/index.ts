@@ -1,6 +1,6 @@
 import { EditorNodeProperties, EditorRED } from 'node-red';
 
-import { ShipInOptions } from '../shared/types';
+import { ShipInOptions } from '../ship-in';
 
 declare const RED: EditorRED;
 
@@ -11,6 +11,7 @@ RED.nodes.registerType<ShipInEditorNodeProperties>('ship-in', {
     color: '#d53434',
     defaults: {
         name: { value: '' },
+        configNode: { value: '', type: 'starwards-config' },
         shipId: { value: '', required: true },
         pattern: { value: '**', required: true },
     },

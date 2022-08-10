@@ -20,7 +20,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "node-red": {
     "nodes": {
-      "ship-in": "./dist/ship-in/ship-in.js"
+      "ship-in": "./dist/ship-in/ship-in.js",
+      "starwards-config": "./dist/starwards-config/starwards-config.js"
     }
   },
   "dependencies": {
