@@ -40,7 +40,7 @@ const makePlugins = (nodeType) => [
     typescript({
         lib: ['es5', 'es6', 'dom'],
         include: [`src/${nodeType}/${nodeType}.html/**/*.ts`, `src/${nodeType}/shared/**/*.ts`, 'src/shared/**/*.ts'],
-        target: 'es5',
+        target: 'ES2019',
         tsconfig: false,
         noEmitOnError: process.env.ROLLUP_WATCH ? false : true,
     }),
