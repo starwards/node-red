@@ -22,23 +22,9 @@ export interface ShipInNode extends Node {
 
 function handleError(node: ShipInNode) {
     const e = node.lastGameError;
-    // eslint-disable-next-line no-console
-    console.error(JSON.stringify(e));
-    // @ts-ignore : WIP
-    // eslint-disable-next-line no-console
-    console.error(String(e.stack));
     if (isCoded(e)) {
         if (e.code in ErrorCode) {
-            const code = e.code as ErrorCode;
-            switch (code) {
-                case ErrorCode.MATCHMAKE_INVALID_ROOM_ID:
-                    // @ts-ignore : WIP
-                    node.status({ fill: 'red', shape: 'ring', text: 'no ship found' });
-                    break;
-                default:
-                    node.status({ fill: 'red', shape: 'ring', text: ErrorCode[code] });
-                    break;
-            }
+            node.status({ fill: 'red', shape: 'ring', text: ErrorCode[e.code] });
         } else {
             node.status({ fill: 'red', shape: 'ring', text: `code ${e.code}` });
         }
