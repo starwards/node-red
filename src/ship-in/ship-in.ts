@@ -22,6 +22,9 @@ export interface ShipInNode extends Node {
 
 function handleError(node: ShipInNode) {
     const e = node.lastGameError;
+    if (!e) {
+        return false;
+    }
     if (isCoded(e)) {
         if (e.code in ErrorCode) {
             node.status({ fill: 'red', shape: 'ring', text: ErrorCode[e.code] });
@@ -33,15 +36,15 @@ function handleError(node: ShipInNode) {
     } else {
         node.status({ fill: 'red', shape: 'ring', text: JSON.stringify(e) });
     }
+    return true;
 }
 
 function nodeLogic(node: ShipInNode, { pattern, shipId }: ShipInOptions) {
-    try {
-        node.status({});
-        const handleStateEvent = (e: Event) => {
-            node.send({ topic: e.path, payload: e.op === 'remove' ? undefined : e.value } as NodeMessage);
-        };
-        const statusLoop = new TaskLoop(async () => {
+    const handleStateEvent = (e: Event) => {
+        node.send({ topic: e.path, payload: e.op === 'remove' ? undefined : e.value } as NodeMessage);
+    };
+    const statusLoop = new TaskLoop(async () => {
+        try {
             const activeGame = await node.configNode.driver.isActiveGame();
             if (!activeGame) {
                 node.status({ fill: 'red', shape: 'dot', text: 'no active game' });
@@ -61,30 +64,31 @@ function nodeLogic(node: ShipInNode, { pattern, shipId }: ShipInOptions) {
             }
             if (node.listeningOnEvents) {
                 if (node.disconnected) {
-                    node.status({ fill: 'red', shape: 'dot', text: 'no reconnect: need to re-deploy flow' });
+                    node.status({ fill: 'red', shape: 'dot', text: 're-deploy flow (no reconnect yet)' });
+                } else {
+                    node.status({ fill: 'green', shape: 'dot', text: 'connected' });
                 }
                 return;
             }
+            node.status({ fill: 'blue', shape: 'ring', text: 'connecting' });
             const shipDriver = await node.configNode.driver.getShipDriver(shipId).catch((e: unknown) => {
                 node.lastGameError = e;
             });
-            if (!shipDriver) {
-                handleError(node);
+            if (handleError(node) || !shipDriver) {
                 return;
             }
             node.destructors.add(() => shipDriver.events.off(pattern, handleStateEvent));
             shipDriver.events.on(pattern, handleStateEvent);
             node.listeningOnEvents = true;
             node.disconnected = false;
-            node.status({ fill: 'green', shape: 'dot', text: 'connected' });
-        }, 1000);
-
-        statusLoop.start();
-        node.destructors.add(statusLoop.stop);
-    } catch (e) {
-        node.lastGameError = e;
+        } catch (e) {
+            node.lastGameError = e;
+        }
         handleError(node);
-    }
+    }, 1000);
+
+    statusLoop.start();
+    node.destructors.add(statusLoop.stop);
 }
 
 const nodeInit: NodeInitializer = (RED): void => {
