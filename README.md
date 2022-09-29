@@ -1,11 +1,5 @@
-<h1 align="center">
-  <br>
-  <img src="static/images/starwards-logo.webp" alt="logo" width="200">
-  <br>
-  @starwards/node-red 
-  <br>
-  <br>
-</h1>
+# Archived
+# This repository was moved [into the starwards monorepo](https://github.com/starwards/starwards/tree/master/modules/node-red)
 
 # What is this?
 
